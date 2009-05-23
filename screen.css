@@ -1,0 +1,11 @@
+div#leftpanel {
+    text-align: left;
+    float: left;
+    width: 28%;
+    height: 100%;
+}
+
+div#episode {
+    float: right;
+    width: 68%;
+}
