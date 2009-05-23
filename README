@@ -1,0 +1,65 @@
+DATABASE SCHEMA:
+
+USERS
+    - userid
+    - username
+    - password
+
+PROFILES
+    - profileid
+    - userid
+    - firstname
+    - lastname
+    - city
+    - state
+    - purchaseprice
+    - purchasedate
+    - mortgagebalance
+    - housephoto
+    - twittername
+
+TIMELINE
+    - timelineid
+    - profileid
+    - userid
+    - entrydate
+    - title
+    - description
+
+DATABASE CREATION SQL STATEMENTS:
+
+CREATE TABLE users (
+    userid INT NOT NULL AUTO_INCREMENT,
+    username VARCHAR(20),
+    password VARCHAR(100),
+    PRIMARY KEY (userid)
+);
+
+CREATE TABLE profiles (
+    profileid INT NOT NULL AUTO_INCREMENT,
+    userid INT NOT NULL,
+    firstname VARCHAR(25),
+    lastname VARCHAR(25),
+    city VARCHAR(100),
+    state VARCHAR(2),
+    purchaseprice FLOAT(10,2),
+    purchasedate INT,
+    mortgagebalance FLOAT(10,2),
+    housephoto VARCHAR(255),
+    twittername VARCHAR(50),
+    FOREIGN KEY (userid) REFERENCES users (userid),
+    PRIMARY KEY (profileid)
+);
+
+CREATE TABLE timeine (
+    timelineid INT NOT NULL AUTO_INCREMENT,
+    profileid INT NOT NULL,
+    userid INT NOT NULL,
+    entrydate INT NOT NULL,
+    title VARCHAR(255),
+    description TEXT,
+    FOREIGN KEY (profileid) REFERENCES profile (profileid),
+    FOREIGN KEY (userid) REFERENCES users (userid),
+    PRIMARY KEY (timelineid) 
+);
+

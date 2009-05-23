@@ -6,7 +6,7 @@
 // Set the database access variables
 // Consider moving this information into a file not stored in souce control
     // Database connection info
-$dbfilename='../planetrefidb.txt';
+$dbfilename='../../planetrefidb.txt';
 $dbfile = fopen($dbfilename, "r");
 $dbuser=trim(fgets($dbfile));
 $dbpassword=trim(fgets($dbfile));
