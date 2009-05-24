@@ -1,11 +1,7 @@
 <?php
-// This file is used to establish a connection to the MySql Database
-// It verifies the user-provided username and password are valid for
-// this site and, if not, kills the connection and returns an error
+// This page is depricated and will be removed from the project once I figure
+// out how you do that in git.
 
-// Set the database access variables
-// Consider moving this information into a file not stored in souce control
-    // Database connection info
 $dbfilename='../../planetrefidb.txt';
 $dbfile = fopen($dbfilename, "r");
 $dbuser=trim(fgets($dbfile));

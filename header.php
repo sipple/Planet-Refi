@@ -4,7 +4,6 @@
     session_start();
     
     // Yes I will eventually merge this into one config file
-    require_once("MySqlConnect.php");
     include_once("library_main.php");
     
     if ($_POST["user"] != "")

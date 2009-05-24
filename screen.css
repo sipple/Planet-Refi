@@ -6,11 +6,8 @@
 p.navigation {
     border: 1px solid black;
     font-weight: normal;
-    font-family: monospace;
-    font-size: large;
+    font-family: helvetica tahoma sans-serif;
     text-align: left;
-    color: #EFFFCD;
-    background-color: #99173C;
     margin: 0;
 }
 

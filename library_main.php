@@ -14,18 +14,23 @@ function logout()
 function Login($username, $userpassword)
 {
     $success = false;
+    $dbh = SqlConnect();
     
-    // Check the username and password
-    $results = @mysql_query("SELECT password FROM users WHERE username='" . $username . "'");
+    $stmt = $dbh->prepare("SELECT password FROM users WHERE username = :username");
+    $stmt->bindParam(':username', $username);
+
+    $stmt->execute();
     
-    $resultsArray = mysql_fetch_assoc($results);
-    $storedPassword = $resultsArray['password'];
-    // If the password does not match, close the db connection
-    if ($storedPassword == md5($userpassword))
+    if ($stmt->execute())
     {
-        $_SESSION['loggedIn'] = 1;
-        $_SESSION['user'] = $username;
-        $success = true;
+        $row = $stmt->fetch();
+        $storedPassword = $row['password'];
+        if ($storedPassword == md5($userpassword))
+        {
+            $_SESSION['loggedIn'] = 1;
+            $_SESSION['user'] = $username;
+            $success = true;
+        }
     }
     
     return $success;
@@ -35,10 +40,15 @@ function Login($username, $userpassword)
 function Register($username, $regkey, $userpassword)
 {
     $success = false;
+    $dbh = SqlConnect();
+    
     if (Login($username, $regkey))
     {
-        $sql = "UPDATE users SET password = '" . md5($userpassword) . "' WHERE username = '" . $username . "'";
-        $success = true;
+        $stmt = $dbh->prepare("UPDATE users SET password = :userpassword WHERE username = :username");
+        $stmt->bindParam(':userpassword', md5($userpassword));
+        $stmt->bindParam(':username', $username);
+        if ($stmt->execute())
+            $success = true;
     }
     
     return $success;
@@ -65,6 +75,25 @@ function IsLoggedIn()
         return true;
     else
         return false;
+}
+
+function SqlConnect()
+{
+    $dbfilename='../../planetrefidb.txt';
+    $dbfile = fopen($dbfilename, "r");
+    $dbuser=trim(fgets($dbfile));
+    $dbpassword=trim(fgets($dbfile));
+    $dbhost=trim(fgets($dbfile));
+    $dbname=trim(fgets($dbfile));
+    
+    $dbh = new PDO('mysql:host=' . $dbhost . ';dbname=' . $dbname, $dbuser, $dbpassword, array(PDO::ATTR_PERSISTENT => true));
+    
+    return $dbh;
+}
+
+function SqlDisconnect($dbh)
+{
+    $dbh = null;
 }
 
 ?>
