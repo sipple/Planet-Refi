@@ -130,6 +130,11 @@ function IsLoggedIn()
         return false;
 }
 
+function GetTimelineEvents()
+{
+    
+}
+
 function SqlConnect()
 {
     $dbfilename='../../planetrefidb.txt';

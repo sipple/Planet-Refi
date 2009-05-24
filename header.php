@@ -24,8 +24,10 @@
 <head>
     <title><?= $pageTitle ?></title>
     <link rel="stylesheet" type="text/css" href="screen.css" media="screen" />
+    <script src="http://static.simile.mit.edu/timeline/api-2.3.0/timeline-api.js?bundle=true" type="text/javascript"></script>
+    <script src="timeline.js" type="text/javascript"></script>
 </head>
-<body>
+<body onload="onLoad();" onresize="onResize();">
     <?=$errorDb ?>
     <div id="maincontent">
 

@@ -5,22 +5,34 @@
     $mortgagebalance = $housephoto = $twittername;
     
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
-        $error = SetProfileInfo();
+    {
+        if ($_GET['type'] == 'timeline')
+            $this;
+        else
+            $error = SetProfileInfo();
+    }
     
     GetProfileInfo();
     
 ?>
 
 <?=$error?>
-<form id="profile" action="profile.php" method="post">
-First Name: <input type="text" name="firstname" value="<?=$firstname?>" /> Last Name: <input type="text" name="lastname" value="<?=$lastname?>" /><br />
-City <input type="text" name="city" value="<?=$city?>" /> State: <input type="text" name="state" value="<?=$state?>" /> <br />
-Purchase Price: <input type="text" name="purchaseprice" value="<?=$purchaseprice?>"/> <br />
-Purchase Date: <input type="text" name="purchasedate" value="<?=$purchasedate?>"/> <br />
-Mortgage Balance/Amount to Refinance: <input type="text" name="mortgagebalance" value="<?=$mortgagebalance?>"/> <br />
-House Photo (url): <input type="text" name="housephoto" value="<?=$housephoto?>"/> <br />
-Twitter Username: <input type="text" name="twittername" value="<?=$twittername?>"/> <br />
-<input type="submit" name="submit" value="Save"/>
+<form id="profile" class="submitform" action="profile.php" method="post">
+<table>
+<tr><td>First Name</td><td><input type="text" name="firstname" value="<?=$firstname?>" /></td><td>Last Name</td><td><input type="text" name="lastname" value="<?=$lastname?>" /></td></tr>
+<tr><td>City</td><td><input type="text" name="city" value="<?=$city?>" /></td><td> State</td><td><input type="text" name="state" value="<?=$state?>" /></td></tr>
+<tr style="height:10px;"></tr>
+<tr><td>Purchase Price</td><td><input type="text" name="purchaseprice" value="<?=$purchaseprice?>"/></td><td>Purchase Date</td><td><input type="text" name="purchasedate" value="<?=$purchasedate?>"/></td></tr>
+<tr><td>Refinance Amount</td><td><input type="text" name="mortgagebalance" value="<?=$mortgagebalance?>"/></td></tr>
+<tr style="height:10px;"></tr>
+<tr><td>House Photo (url)</td><td><input type="text" name="housephoto" value="<?=$housephoto?>"/></td><td>Twitter Username</td><td><input type="text" name="twittername" value="<?=$twittername?>"/></td></tr>
+<tr><td></td><td></td><td></td><td><input type="submit" name="submit" value="Save" style="float:right;"/></td></tr>
+</table>
+</form>
+
+<hr>
+    
+<form id="timeline" class="submitform" action="profile.php?type=timeline" method="post">
 </form>
 
 <?php

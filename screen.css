@@ -3,6 +3,14 @@
     background-color: white;
 }
 
+#pmtimeline {
+    margin-top: 30px;
+}
+
+.submitform {
+    padding: 10px 10px 10px 10px;
+}
+
 p.navigation {
     border: 1px solid black;
     font-weight: normal;
