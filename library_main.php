@@ -54,6 +54,61 @@ function Register($username, $regkey, $userpassword)
     return $success;
 }
 
+function GetProfileRow($username)
+{   
+    $dbh = SqlConnect();
+    
+    $stmt = $dbh->prepare('SELECT firstname, lastname, city, state,
+                            purchaseprice, purchasedate, mortgagebalance,
+                            housephoto, twittername FROM profiles p
+                            JOIN users u ON p.userid = u.userid
+                            WHERE u.username = :username');
+    
+    $stmt->bindParam(':username', $username);
+    
+    if ($stmt->execute())
+        $row = $stmt->fetch();
+    else
+        $row = null;
+    
+    return $row;
+
+}
+
+function SubmitProfileRow($username, $firstname, $lastname, $city, $state,
+                          $purchaseprice, $purchasedate, $mortgagebalance,
+                          $housephoto, $twittername)
+{
+    $success = false;
+    
+    $dbh = SqlConnect();
+    
+    $stmt = $dbh->prepare('UPDATE profiles p, users u
+                          SET p.firstname = :firstname,
+                          p.lastname = :lastname, p.city = :city, p.state = :state,
+                          p.purchasedate = :purchasedate, p.purchaseprice = :purchaseprice,
+                          p.mortgagebalance = :mortgagebalance, p.housephoto = :housephoto,
+                          p.twittername = :twittername
+                          WHERE p.userid = u.userid AND
+                          u.username = :username');
+    
+    $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':firstname', $firstname);
+    $stmt->bindParam(':lastname', $lastname);
+    $stmt->bindParam(':city', $city);
+    $stmt->bindParam(':state', $state);
+    $stmt->bindParam(':purchaseprice', $purchaseprice);
+    $stmt->bindParam(':purchasedate', $purchasedate);
+    $stmt->bindParam(':mortgagebalance', $mortgagebalance);
+    $stmt->bindParam(':housephoto', $housephoto);
+    $stmt->bindParam(':twittername', $twittername);
+    
+    if ($stmt->execute())
+        $success = true;
+    
+    
+    return $success;
+}
 
 function LoadNavBar()
 {
@@ -62,11 +117,9 @@ function LoadNavBar()
         print("Welcome back ". $_SESSION['user'] . ". To add an update to the timline, visit your <a href=\"profile.php\">profile</a>.  Or if you're done, <a href=\"logout.php\">logout</a>");
     }
     else
-        print('If you are a member, please <a href="login.php">login</a>.');
-    
-    
+        print('If you\'re a contributor, please <a href="login.php">login</a>.');
+        
     print($sidebar);
-    
 }
 
 function IsLoggedIn()
