@@ -171,12 +171,12 @@ function IsLoggedIn()
 
 function SqlConnect()
 {
-    $dbfilename='../../planetrefidb.txt';
-    $dbfile = fopen($dbfilename, "r");
-    $dbuser=trim(fgets($dbfile));
-    $dbpassword=trim(fgets($dbfile));
-    $dbhost=trim(fgets($dbfile));
-    $dbname=trim(fgets($dbfile));
+    $dbfilename = '../../planetrefidb.txt';
+    $dbfile     = fopen($dbfilename, "r");
+    $dbuser     = trim(fgets($dbfile));
+    $dbpassword = trim(fgets($dbfile));
+    $dbhost     = trim(fgets($dbfile));
+    $dbname     = trim(fgets($dbfile));
     
     $dbh = new PDO('mysql:host=' . $dbhost . ';dbname=' . $dbname, $dbuser, $dbpassword, array(PDO::ATTR_PERSISTENT => true));
     

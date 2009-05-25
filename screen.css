@@ -14,6 +14,8 @@ a {
 
 #pmtimeline {
     margin-top: 30px;
+    height: 350px;
+    border: 1px solid #aaa;
 }
 
 .submitform {

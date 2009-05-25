@@ -1,9 +1,9 @@
 <?php
-    $pageTitle = "Planet Money Refinance Timline";
+    $pageTitle = "Planet Money Refinance Timeline";
     require_once("header.php");
 ?>
 
-<div id="pmtimeline" style="height: 350px; border: 1px solid #aaa"></div>
+<div id="pmtimeline"></div>
 <noscript>
 This page uses Javascript to show you a Timeline. Please enable Javascript in your browser to see the full page. Thank you.
 </noscript>
