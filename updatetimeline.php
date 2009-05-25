@@ -1,5 +1,6 @@
 <?php
 
+    $pageTitle = "Planet Money Refinance Timline";
     require_once('header.php');
 
     $datenow = date("m/d/Y");
@@ -21,6 +22,10 @@
 </table>
 </form>
 
+
+<?php
+    require_once("footer.php");
+?>
 
 <?php
     

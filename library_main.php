@@ -153,10 +153,10 @@ function LoadNavBar()
 {
     if (IsLoggedIn())
     {
-        print("Welcome back ". $_SESSION['user'] . ". Add an update to the <a href=\"updatetimeline.php\">timeline</a>, visit your <a href=\"profile.php\">profile</a>,  or <a href=\"logout.php\">logout</a>");
+        print("Welcome back ". $_SESSION['user'] . ". Add an update to the <a href=\"updatetimeline.php\">timeline</a>, edit your <a href=\"profile.php\">profile</a>,  or <a href=\"logout.php\">logout</a>");
     }
     else
-        print('If you\'re a contributor, please <a href="login.php">login</a>.');
+        print('If you\'re a contributor, feel free to <a href="login.php">login</a>. Otherwise, enjoy looking around.');
         
     print($sidebar);
 }

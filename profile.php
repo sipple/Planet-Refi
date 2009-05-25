@@ -1,4 +1,6 @@
 <?php
+
+    $pageTitle = "Planet Money Refinance Timline";
     require_once('header.php');
     
     $firstname = $lastname = $city = $state = $purchaseprice = $purchasedate =
@@ -26,6 +28,10 @@
 <tr><td></td><td></td><td></td><td><input type="submit" name="submit" value="Save" style="float:right;"/></td></tr>
 </table>
 </form>
+
+<?php
+    require_once("footer.php");
+?>
 
 <?php
     

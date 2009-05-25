@@ -1,4 +1,5 @@
 <?php
+    $pageTitle = "Planet Money Refinance Timline";
     require_once('header.php');
 ?>
 
@@ -9,3 +10,7 @@ Username: <input type="text" name="user" /><br />
 Password: <input type="password" name="password" /> <br /><br />
 <input type="submit" name="submit" value="Log In"/>
 </form>
+
+<?php
+    require_once("footer.php");
+?>
