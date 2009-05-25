@@ -123,17 +123,13 @@ function SubmitTimelineEntry($username, $title, $description, $entrydate)
                           :description,
                           :entrydate)');
     
-    print('got here');
     $stmt->bindParam(':username', $username);
     $stmt->bindParam(':title', $title);
     $stmt->bindParam(':description', $description);
     $stmt->bindParam(':entrydate', $entrydate);
     
     if ($stmt->execute())
-    {
-        print('and got here');
         $success = true;
-    }
     
     return $success;
 }

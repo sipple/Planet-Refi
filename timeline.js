@@ -5,14 +5,14 @@
     Timeline.createBandInfo({
         eventSource:    eventSource,
         width:          "70%", 
-        intervalUnit:   Timeline.DateTime.MONTH, 
+        intervalUnit:   Timeline.DateTime.WEEK, 
         intervalPixels: 100
     }),
     Timeline.createBandInfo({
         overview:       true,
         eventSource: eventSource,
         width:          "30%", 
-        intervalUnit:   Timeline.DateTime.YEAR, 
+        intervalUnit:   Timeline.DateTime.MONTH, 
         intervalPixels: 200
       })
     ];

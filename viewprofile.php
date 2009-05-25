@@ -17,8 +17,9 @@
 Name: <?=$firstname?> <?=$lastname?> <br />
 Location: <?=$city?>, <?=$state?> <br />
 Home purchased for $<?=$purchaseprice?> on <?=$purchasedate?> <br />
-<?php if($housephoto != '') print('<img src="' . $housephoto . '" />');?>
-<?php if($twittername != '') print('Follow them on <a href="http://twitter.com/' . $twittername . '">twitter</a>');?>                        
+Asking banks to refinance $<?=$mortgagebalance?> worth of mortgage<br/>
+<?php if($twittername != '') print('Follow them on <a href="http://twitter.com/' . $twittername . '">twitter</a>');?>  <br />
+<?php if($housephoto != '') print('<img src="' . $housephoto . '" />');?>                       
 
 <?php
 
