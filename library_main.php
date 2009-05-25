@@ -75,6 +75,21 @@ function GetProfileRow($username)
 
 }
 
+function GetProfileList()
+{
+    $dbh = SqlConnect();
+    
+    $stmt = $dbh->prepare('SELECT p.firstname, u.username FROM profiles p
+                            JOIN users u ON p.userid = u.userid');
+    
+    if ($stmt->execute())
+        $rows = $stmt->fetchAll();
+    else
+        $rows = null;
+    
+    return $rows;
+}
+
 function SubmitProfileRow($username, $firstname, $lastname, $city, $state,
                           $purchaseprice, $purchasedate, $mortgagebalance,
                           $housephoto, $twittername)

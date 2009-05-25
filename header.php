@@ -4,7 +4,7 @@
     session_start();
     
     // Yes I will eventually merge this into one config file
-    include_once("library_main.php");
+    require_once("library_main.php");
     
     if ($_POST["user"] != "")
     {

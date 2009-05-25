@@ -1,25 +1,18 @@
 <?php
 
+    require_once('header.php');
     $firstname = $lastname = $city = $state = $purchaseprice = $purchasedate =
     $mortgagebalance = $housephoto = $twittername;
     
     if ($_GET['user'] != '')
     {
-        require_once('header.php');
         GetViewProfileInfo($_GET['user']);
+        include_once('template_profile.php');
     }
     else
-        header(index.php);
+        include_once('template_profilelist.php');
 ?>
-
-<h2><?=$_GET['user']?>'s Profile</h2>
-
-Name: <?=$firstname?> <?=$lastname?> <br />
-Location: <?=$city?>, <?=$state?> <br />
-Home purchased for $<?=$purchaseprice?> on <?=$purchasedate?> <br />
-Asking banks to refinance $<?=$mortgagebalance?> worth of mortgage<br/>
-<?php if($twittername != '') print('Follow them on <a href="http://twitter.com/' . $twittername . '">twitter</a>');?>  <br />
-<?php if($housephoto != '') print('<img src="' . $housephoto . '" />');?>                       
+                   
 
 <?php
 
