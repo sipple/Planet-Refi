@@ -9,6 +9,7 @@
         intervalPixels: 100
     }),
     Timeline.createBandInfo({
+        overview:       true,
         eventSource: eventSource,
         width:          "30%", 
         intervalUnit:   Timeline.DateTime.YEAR, 

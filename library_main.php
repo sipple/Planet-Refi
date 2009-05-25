@@ -104,8 +104,36 @@ function SubmitProfileRow($username, $firstname, $lastname, $city, $state,
     $stmt->bindParam(':twittername', $twittername);
     
     if ($stmt->execute())
-        $success = true;
+        $success = true;   
     
+    return $success;
+}
+
+function SubmitTimelineEntry($username, $title, $description, $entrydate)
+{
+    $success = false;
+    
+    $dbh = SqlConnect();
+    
+    $stmt = $dbh->prepare('INSERT INTO timeline 
+                          (userid, profileid,  title, description,  entrydate)
+                          VALUES ( (SELECT userid FROM users u WHERE username = :username),
+                          (SELECT p.profileid FROM profiles p JOIN users u ON p.userid = u.userid WHERE u.username = :username),
+                          :title,
+                          :description,
+                          :entrydate)');
+    
+    print('got here');
+    $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':title', $title);
+    $stmt->bindParam(':description', $description);
+    $stmt->bindParam(':entrydate', $entrydate);
+    
+    if ($stmt->execute())
+    {
+        print('and got here');
+        $success = true;
+    }
     
     return $success;
 }
@@ -114,7 +142,7 @@ function LoadNavBar()
 {
     if (IsLoggedIn())
     {
-        print("Welcome back ". $_SESSION['user'] . ". To add an update to the timline, visit your <a href=\"profile.php\">profile</a>.  Or if you're done, <a href=\"logout.php\">logout</a>");
+        print("Welcome back ". $_SESSION['user'] . ". Add an update to the <a href=\"updatetimeline.php\">timeline</a>, visit your <a href=\"profile.php\">profile</a>,  or <a href=\"logout.php\">logout</a>");
     }
     else
         print('If you\'re a contributor, please <a href="login.php">login</a>.');
@@ -128,11 +156,6 @@ function IsLoggedIn()
         return true;
     else
         return false;
-}
-
-function GetTimelineEvents()
-{
-    
 }
 
 function SqlConnect()

@@ -6,10 +6,7 @@
     
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
-        if ($_GET['type'] == 'timeline')
-            $this;
-        else
-            $error = SetProfileInfo();
+        $error = SetProfileInfo();
     }
     
     GetProfileInfo();
@@ -28,11 +25,6 @@
 <tr><td>House Photo (url)</td><td><input type="text" name="housephoto" value="<?=$housephoto?>"/></td><td>Twitter Username</td><td><input type="text" name="twittername" value="<?=$twittername?>"/></td></tr>
 <tr><td></td><td></td><td></td><td><input type="submit" name="submit" value="Save" style="float:right;"/></td></tr>
 </table>
-</form>
-
-<hr>
-    
-<form id="timeline" class="submitform" action="profile.php?type=timeline" method="post">
 </form>
 
 <?php
