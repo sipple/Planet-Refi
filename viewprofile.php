@@ -1,7 +1,7 @@
 <?php
 
     $pageTitle = "Planet Money Refinance Timline";
-    require_once('header.php');
+    require('header.php');
     
     $firstname = $lastname = $city = $state = $purchaseprice = $purchasedate =
     $mortgagebalance = $housephoto = $twittername;
@@ -17,7 +17,7 @@
                    
 
 <?php
-    require_once("footer.php");
+    require("footer.php");
 ?>
 
 <?php

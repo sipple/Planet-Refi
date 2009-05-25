@@ -3,18 +3,17 @@
     DisplayProfileList();
 ?>
 
-
 <?php
 
     function DisplayProfileList()
     {
         $profileRows = GetProfileList();
         
-        print('<ul>');
+        print '<ul>';
         foreach ($profileRows as $row)
-            print('<li><a href="viewprofile.php?user=' . $row['username'] . '">' . $row['firstname'] . '</a></li>');
+            print '<li><a href="viewprofile.php?user=' . $row['username'] . '">' . $row['firstname'] . '</a></li>';
         
-        print('</ul>');
+        print '</ul>';
     }
 
 ?>

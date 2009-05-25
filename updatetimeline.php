@@ -1,9 +1,9 @@
 <?php
 
-    $pageTitle = "Planet Money Refinance Timline";
+    $pageTitle = "Planet Money Refinance Timeline";
     require_once('header.php');
 
-    $datenow = date("m/d/Y");
+    $datenow = date('m/d/Y');
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
@@ -24,7 +24,7 @@
 
 
 <?php
-    require_once("footer.php");
+    require("footer.php");
 ?>
 
 <?php
