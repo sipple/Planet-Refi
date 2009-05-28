@@ -27,6 +27,6 @@
 <body onload="onLoad();" onresize="onResize();">
     <?= $errorDb ?>
     <div id="maincontent">
-        <h1><a href="http://saalonmuyo.com/planetrefi/index.php">The Planet Money Listener Refinance Timelime</a></h1>
+        <h1><a href="http://saalonmuyo.com/planetrefi/index.php">The Planet Money Listener Refinance Timeline</a></h1>
 
       <p class="navigation"><?php LoadNavBar(); ?></p>

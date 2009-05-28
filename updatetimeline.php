@@ -17,8 +17,8 @@
 <table>
 <tr><td>Event Date</td><td><input type="text" name="eventdate" value="<?=$datenow?>"/></td></tr>
 <tr><td>Title</td><td><input type="text" name="title" /></td></tr>
-<tr><td>Description</td><td><input type="textarea" name="description" /></td></tr>
-<tr><td><input type="submit" name="submit" value="Save" style="float:right;"/></td></tr>
+<tr><td>Description</td><td><textarea rows=5 name="description"></textarea></td></tr>
+<tr><td></td><td><input type="submit" name="submit" value="Save" style="float:right;"/></td></tr>
 </table>
 </form>
 

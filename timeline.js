@@ -4,16 +4,18 @@
     var bandInfos = [
     Timeline.createBandInfo({
         eventSource:    eventSource,
+        date:           "Jan 25 2009 00:00:00 GMT",
         width:          "70%", 
         intervalUnit:   Timeline.DateTime.WEEK, 
-        intervalPixels: 100
+        intervalPixels: 200
     }),
     Timeline.createBandInfo({
         overview:       true,
+        date:           "Feb 01 2009 00:00:00 GMT",
         eventSource: eventSource,
         width:          "30%", 
         intervalUnit:   Timeline.DateTime.MONTH, 
-        intervalPixels: 200
+        intervalPixels: 75
       })
     ];
     bandInfos[1].syncWith = 0;

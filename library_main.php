@@ -58,7 +58,7 @@ function GetProfileRow($username)
 {   
     $dbh = SqlConnect();
     
-    $stmt = $dbh->prepare('SELECT firstname, lastname, city, state,
+    $stmt = $dbh->prepare('SELECT username, firstname, lastname, city, state,
                             purchaseprice, purchasedate, mortgagebalance,
                             housephoto, twittername FROM profiles p
                             JOIN users u ON p.userid = u.userid

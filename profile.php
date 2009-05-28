@@ -56,8 +56,8 @@
     function SetProfileInfo()
     {
         if (!SubmitProfileRow($_SESSION['user'], $_POST['firstname'], $_POST['lastname'],
-                         $_POST['city'], $_POST['state'], $_POST['purchaseprice'],
-                         strtotime($_POST['purchasedate']), $_POST['mortgagebalance'],
+                         $_POST['city'], $_POST['state'], str_replace(',','',$_POST['purchaseprice']),
+                         strtotime($_POST['purchasedate']), str_replace(',','',$_POST['mortgagebalance']),
                          $_POST['housephoto'], $_POST['twittername']))
         
             $error = 'There was an error submitting your changes. Please try again.';
