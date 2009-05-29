@@ -156,7 +156,7 @@ function LoadNavBar()
         print("Welcome back ". $_SESSION['user'] . ". Add an update to the <a href=\"updatetimeline.php\">timeline</a>, edit your <a href=\"profile.php\">profile</a>,  or <a href=\"logout.php\">logout</a>");
     }
     else
-        print('If you\'re a contributor, feel free to <a href="login.php">login</a>. Otherwise, enjoy looking around.');
+        print('If you\'re a contributor, feel free to <a href="login.php">login</a>. If you want to play, <a href="mailto:planetrefi@daemonsong.com">drop us a line.</a>');
         
     print($sidebar);
 }

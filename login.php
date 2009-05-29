@@ -1,5 +1,5 @@
 <?php
-    $pageTitle = "Planet Money Refinance Timeline";
+    $pageTitle = "Planet Money Race to Refinance";
     require_once('header.php');
 ?>
 

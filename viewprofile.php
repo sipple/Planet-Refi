@@ -1,6 +1,6 @@
 <?php
 
-    $pageTitle = "Planet Money Refinance Timline";
+    $pageTitle = "Planet Money Race To Refinance";
     require('header.php');
     
     $firstname = $lastname = $city = $state = $purchaseprice = $purchasedate =
