@@ -9,7 +9,8 @@ trying to refinance their mortgage. Mortgage rates are low, but credit is tight.
 their refinance will be more interesting than every other banking transaction in history. If they're
 very lucky, they'll manage to save some money on their home in the process.</P>
 
-<p>The timeline below is easy to use. Just put your mouse over the either band and click and drag to the left or right.</p>
+<p>The timeline below is easy to use. Just put your mouse over the either band and click and drag to the left or right.
+The story begins on January 12, 2009 with Noel's first attempt to refinance.</p>
 
 <p>Wish us luck.</p>
 

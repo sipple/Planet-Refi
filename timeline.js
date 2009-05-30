@@ -4,8 +4,8 @@
     var bandInfos = [
     Timeline.createBandInfo({
         eventSource:    eventSource,
-        date:           "Jan 25 2009 00:00:00 GMT",
-        width:          "70%", 
+        date:           "Jan 15 2009 00:00:00 GMT",
+        width:          "70%",
         intervalUnit:   Timeline.DateTime.WEEK, 
         intervalPixels: 200
     }),

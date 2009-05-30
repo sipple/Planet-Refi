@@ -4,7 +4,7 @@
     require('header.php');
     
     $firstname = $lastname = $city = $state = $purchaseprice = $purchasedate =
-    $mortgagebalance = $housephoto = $twittername;
+    $mortgagebalance = $secondmortgage = $housephoto = $twittername;
     
     if ($_GET['user'] != '')
     {
@@ -33,6 +33,7 @@
         $GLOBALS['purchaseprice'] = $profileRow['purchaseprice'];
         $GLOBALS['purchasedate'] = date("m/d/Y", $profileRow['purchasedate']);
         $GLOBALS['mortgagebalance'] = $profileRow['mortgagebalance'];
+        $GLOBALS['secondmortgage'] = $profileRow['secondmortgage'];
         $GLOBALS['housephoto'] = $profileRow['housephoto'];
         $GLOBALS['twittername'] = $profileRow['twittername'];
     }

@@ -59,7 +59,7 @@ function GetProfileRow($username)
     $dbh = SqlConnect();
     
     $stmt = $dbh->prepare('SELECT username, firstname, lastname, city, state,
-                            purchaseprice, purchasedate, mortgagebalance,
+                            purchaseprice, purchasedate, mortgagebalance, secondmortgage,
                             housephoto, twittername FROM profiles p
                             JOIN users u ON p.userid = u.userid
                             WHERE u.username = :username');
@@ -92,7 +92,7 @@ function GetProfileList()
 
 function SubmitProfileRow($username, $firstname, $lastname, $city, $state,
                           $purchaseprice, $purchasedate, $mortgagebalance,
-                          $housephoto, $twittername)
+                          $secondmortgage, $housephoto, $twittername)
 {
     $success = false;
     
@@ -102,8 +102,8 @@ function SubmitProfileRow($username, $firstname, $lastname, $city, $state,
                           SET p.firstname = :firstname,
                           p.lastname = :lastname, p.city = :city, p.state = :state,
                           p.purchasedate = :purchasedate, p.purchaseprice = :purchaseprice,
-                          p.mortgagebalance = :mortgagebalance, p.housephoto = :housephoto,
-                          p.twittername = :twittername
+                          p.mortgagebalance = :mortgagebalance, p.secondmortgage = :secondmortgage,
+                          p.housephoto = :housephoto, p.twittername = :twittername
                           WHERE p.userid = u.userid AND
                           u.username = :username');
     
@@ -115,6 +115,7 @@ function SubmitProfileRow($username, $firstname, $lastname, $city, $state,
     $stmt->bindParam(':purchaseprice', $purchaseprice);
     $stmt->bindParam(':purchasedate', $purchasedate);
     $stmt->bindParam(':mortgagebalance', $mortgagebalance);
+    $stmt->bindParam(':secondmortgage', $secondmortgage);
     $stmt->bindParam(':housephoto', $housephoto);
     $stmt->bindParam(':twittername', $twittername);
     
