@@ -8,7 +8,7 @@
 </head>
 <body onload="onLoad();" onresize="onResize();">
 
-<div style="height:250px; width:500px;" id="pmtimeline"></div>
+<div style="height:250px; width:500px; font-size:small;" id="pmtimeline"></div>
 <noscript>
 This page uses Javascript to show you a Timeline. Please enable Javascript in your browser to see the full page. Thank you.
 </noscript>

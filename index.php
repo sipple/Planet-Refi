@@ -14,7 +14,7 @@ The story begins on January 12, 2009 with Noel's first attempt to refinance.</p>
 
 <p>Wish us luck.</p>
 
-<div id="pmtimeline"></div>
+<div id="pmtimeline" style="font-size:small;"></div>
 <noscript>
 This page uses Javascript to show you a Timeline. Please enable Javascript in your browser to see the full page. Thank you.
 </noscript>
