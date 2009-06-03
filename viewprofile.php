@@ -6,6 +6,8 @@
     $firstname = $lastname = $city = $state = $purchaseprice = $purchasedate =
     $mortgagebalance = $secondmortgage = $housephoto = $twittername;
     
+    print $pageURL;
+    
     if ($_GET['user'] != '')
     {
         GetViewProfileInfo($_GET['user']);

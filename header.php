@@ -21,7 +21,11 @@
 <head>
     <title><?= $pageTitle ?></title>
     <link rel="stylesheet" type="text/css" href="screen.css" media="screen" />
-    <script src="http://static.simile.mit.edu/timeline/api-2.3.0/timeline-api.js?bundle=true" type="text/javascript"></script>
+    <script>
+      Timeline_ajax_url="http://www.saalonmuyo.com/planetrefi/timeline_2.3.0/src/ajax/api/simile-ajax-api.js";
+      Timeline_urlPrefix='http://www.saalonmuyo.com/planetrefi/timeline_2.3.0/src/webapp/api/';       
+    </script>
+    <script src="http://www.saalonmuyo.com/planetrefi/timeline_2.3.0/src/webapp/api/timeline-api.js" type="text/javascript"></script>
     <script src="timeline.js" type="text/javascript"></script>
 </head>
 <body onload="onLoad();" onresize="onResize();">

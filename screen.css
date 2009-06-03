@@ -13,7 +13,7 @@ a {
 }
 
 #pmtimeline {
-    margin-top: 30px;
+    margin-top: 10px;
     height: 350px;
     border: 1px solid #aaa;
 }
@@ -40,4 +40,21 @@ div#leftpanel {
 div#episode {
     float: right;
     width: 68%;
+}
+
+div.contributor {
+    clear:left;
+    text-align:center;
+    border-bottom: dotted 1px black;
+    padding-left:2px;
+    margin: 2px 5px 2px 5px;
+}
+
+div.contributorcontainer {
+    float:left;
+    width:270px;
+    border-right: dotted 1px black;
+    border-left: dotted 1px black;
+    text-align: center;
+    margin: 0px 10px 10px 10px;
 }

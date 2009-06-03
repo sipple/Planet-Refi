@@ -75,6 +75,30 @@ function GetProfileRow($username)
 
 }
 
+function GetProfileEvents($username)
+{
+        $dbh = SqlConnect();
+    
+    $stmt = $dbh->prepare("SELECT from_unixtime(entrydate,
+                          get_format(date, 'USA')) AS date,
+                          title,
+                          description
+                          FROM timeline t
+                          JOIN users u ON t.userid = u.userid 
+                          JOIN profiles p ON p.userid = u.userid
+                          WHERE u.username = :username
+                          ORDER BY entrydate ASC");
+    
+    $stmt->bindParam(':username', $username);
+    
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    
+    if ($stmt->execute())
+        return $stmt->fetchAll();
+    else
+        return '';
+}
+
 function GetProfileList()
 {
     $dbh = SqlConnect();
