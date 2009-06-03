@@ -15,7 +15,7 @@ function GetTimelineEvents()
                           CONCAT(p.firstname, ': ', title) AS title,
                           description,
                           'false' AS durationEvent,
-                          CONCAT('http://saalonmuyo.com/viewprofile.php?user=', u.username) AS link,
+                          CONCAT('http://saalonmuyo.com/planetrefi/viewprofile.php?user=', u.username) AS link,
                           p.housephoto AS image
                           FROM timeline t
                           JOIN users u ON t.userid = u.userid

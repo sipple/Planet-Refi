@@ -28,7 +28,10 @@
     <script src="http://www.saalonmuyo.com/planetrefi/timeline_2.3.0/src/webapp/api/timeline-api.js" type="text/javascript"></script>
     <script src="timeline.js" type="text/javascript"></script>
 </head>
-<body onload="onLoad();" onresize="onResize();">
+<?php
+if ($_SERVER['PHP_SELF'] == '/planetrefi/index.php') print '<body onload="onLoad();" onresize="onResize();">';
+else print '<body>';
+?>
     <?= $errorDb ?>
     <div id="maincontent">
         <h1><a href="http://saalonmuyo.com/planetrefi/index.php">The Planet Money Listener <I>Race to Refinance</I></a></h1>
